@@ -23,7 +23,14 @@ p {
     width: 100vw;
     height: 100vh;
     background-color: gray;
-    opacity: 0.2;
+    opacity: 0;
+    animation: show-banner 0.5s 3s forwards;
+}
+
+@keyframes show-banner {
+    100% {
+        opacity: 0.2;
+    }
 }
 
 .cup {
@@ -37,14 +44,17 @@ p {
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
-    animation: cupAppearing 1s;
+    animation: cupAppearing 1s 3s forwards;
+    opacity: 0;
 }
 
 @keyframes cupAppearing {
     0% {
+        opacity: 1;
         bottom: -100%;
     }
     100% {
+        opacity: 1;
         bottom: 0;
     }
 }
@@ -58,7 +68,7 @@ p {
     background-repeat: no-repeat;
     position: absolute;
     top: 0;
-    animation: confetti-top 1s 1s forwards;
+    animation: confetti-top 1s 4s forwards;
     opacity: 0;
 }
 
@@ -71,7 +81,7 @@ p {
     background-repeat: no-repeat;
     position: absolute;
     bottom: 0;
-    animation: confetti 1s 1s forwards;
+    animation: confetti 1s 4s forwards;
     opacity: 0;
 }
 
@@ -104,8 +114,8 @@ p {
     position: absolute;
     top: 0;
     left: 0;
-    animation: team-left-appear 1s 2s forwards,
-    team-left-disappear 1s 6s forwards;
+    animation: team-left-appear 1s 5s forwards,
+    team-left-disappear 1s 9s forwards;
     opacity: 0;
     z-index: 1;
 }
@@ -138,8 +148,8 @@ p {
     position: absolute;
     top: 0;
     right: -200px;
-    animation: team-right-appear 1s 2s forwards,
-    team-right-disappear 1s 6s forwards;
+    animation: team-right-appear 1s 5s forwards,
+    team-right-disappear 1s 9s forwards;
     opacity: 0;
     z-index: 1;
 }
@@ -183,23 +193,32 @@ p {
 
 .center-text p:first-child {
     font-size: 200px;
-    animation: show-text 0.5s 3s forwards, text-gone 0.3s 5.5s forwards;
+    animation: show-text 0.5s 6s forwards, text-gone 0.3s 8.5s forwards;
 
 }
 
 .center-text p:nth-child(2) {
     font-size: 140px;
-    animation: show-text 0.5s 3.5s forwards, text-gone 0.3s 5.5s forwards;
+    animation: show-text 0.5s 6.5s forwards, text-gone 0.3s 8.5s forwards;
 }
 
 .center-text p:nth-child(3) {
     font-size: 78px;
-    animation: show-text 0.5s 4s forwards, text-gone 0.3s 5.5s forwards;
+    animation: show-text 0.5s 7s forwards, text-gone 0.3s 8.5s forwards;
 }
 
 @keyframes show-text {
     100% {
        opacity: 1;
+    }
+}
+
+@keyframes text-gone {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
     }
 }
 
@@ -213,7 +232,7 @@ p {
     top: 50%;
     transform: translateY(-50%);
     left: 10%;
-    animation: scale-logos 0.5s 4s forwards, team-left-logo-gone 1s 6s forwards;
+    animation: scale-logos 0.5s 7s forwards, team-left-logo-gone 1s 9s forwards;
     opacity: 0;
     z-index: 1;
 }
@@ -238,7 +257,7 @@ p {
     top: 50%;
     right: 10%;
     transform:  translateY(-50%);
-    animation: scale-logos 0.5s 4s forwards, team-right-logo-gone 1s 6s forwards;
+    animation: scale-logos 0.5s 7s forwards, team-right-logo-gone 1s 9s forwards;
     opacity: 0;
     z-index: 1;
 }
@@ -265,15 +284,6 @@ p {
     }
 }
 
-@keyframes text-gone {
-    0% {
-        opacity: 1;
-    }
-    100% {
-        opacity: 0;
-    }
-}
-
 .close-button {
     position: absolute;
     right: 2%;
@@ -286,6 +296,17 @@ p {
     background-color: transparent;
     border: none;
     cursor: pointer;
+    opacity: 0;
+    animation: close-button-appear 0.5s 4s forwards;
+}
+
+@keyframes close-button-appear {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 
 .final-page {
@@ -299,7 +320,7 @@ p {
     top: 0;
     padding: 20px;
     opacity: 0;
-    animation: display-final-page 0.1s 5s forwards;
+    animation: display-final-page 0.1s 8s forwards;
 }
 
 .final-page .team {
@@ -399,10 +420,15 @@ p {
     display: none;
 }
 
-
-
-
-
+.play-button {
+    height: 70px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    display: none;
+}
 
 
 
