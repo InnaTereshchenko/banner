@@ -19,6 +19,7 @@ const handleButton = () => {
     video.pause();
     watch.style.transform = 'rotate(45deg)';
     isWatching = false;
+    playButton.style.display = 'none';
     videoDimmer.style.display = 'none';
   } else {
     video.style.display = 'block';
