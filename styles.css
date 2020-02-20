@@ -5,7 +5,7 @@ p {
 }
 
 .page {
-    background-image: url("../public/images/Desktop_cropped1050.png");
+    background-image: url("images/Desktop_cropped1050.png");
     width: 100vw;
     height: 100vh;
     background-size: contain;
@@ -29,7 +29,7 @@ p {
 .cup {
     width: 30%;
     height: 90%;
-    background-image: url("../public/images/Cup Hoist.png");
+    background-image: url("images/Cup Hoist.png");
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
@@ -52,7 +52,7 @@ p {
 .confetti {
     width: 100vw;
     height: 560px;
-    background-image: url("../public/images/confeti.png");
+    background-image: url("images/confeti.png");
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
@@ -65,7 +65,7 @@ p {
 .confetti-bottom {
     width: 100vw;
     height: 400px;
-    background-image: url("../public/images/confeti bottom.png");
+    background-image: url("images/confeti bottom.png");
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
@@ -98,15 +98,16 @@ p {
 .team-left {
     width: 100vw;
     height: 100vh;
-    background-image: url("../public/images/left team.png");
+    background-image: url("images/left team.png");
     background-position: center;
     background-repeat: no-repeat;
     position: absolute;
     top: 0;
     left: 0;
     animation: team-left-appear 1s 2s forwards,
-    team-left-disappear 1s 5s forwards;
+    team-left-disappear 1s 6s forwards;
     opacity: 0;
+    z-index: 1;
 }
 
 @keyframes team-left-appear {
@@ -131,15 +132,16 @@ p {
 .team-right {
     width: 100vw;
     height: 100vh;
-    background-image: url("../public/images/right team.png");
+    background-image: url("images/right team.png");
     background-position: center;
     background-repeat: no-repeat;
     position: absolute;
     top: 0;
     right: -200px;
     animation: team-right-appear 1s 2s forwards,
-    team-right-disappear 1s 5s forwards;
+    team-right-disappear 1s 6s forwards;
     opacity: 0;
+    z-index: 1;
 }
 
 @keyframes team-right-appear {
@@ -171,6 +173,7 @@ p {
     font-weight: normal;
     line-height: 0.9;
     text-align: center;
+    z-index: 1;
 }
 
 .center-text p {
@@ -180,18 +183,18 @@ p {
 
 .center-text p:first-child {
     font-size: 200px;
-    animation: show-text 0.5s 3s forwards, text-gone 0.3s 4.5s forwards;
+    animation: show-text 0.5s 3s forwards, text-gone 0.3s 5.5s forwards;
 
 }
 
 .center-text p:nth-child(2) {
     font-size: 140px;
-    animation: show-text 0.5s 3.5s forwards, text-gone 0.3s 4.5s forwards;
+    animation: show-text 0.5s 3.5s forwards, text-gone 0.3s 5.5s forwards;
 }
 
 .center-text p:nth-child(3) {
     font-size: 78px;
-    animation: show-text 0.5s 4s forwards, text-gone 0.3s 4.5s forwards;
+    animation: show-text 0.5s 4s forwards, text-gone 0.3s 5.5s forwards;
 }
 
 @keyframes show-text {
@@ -201,7 +204,7 @@ p {
 }
 
 .team-left-logo {
-    background-image: url("../public/images/left team logo.png");
+    background-image: url("images/left team logo.png");
     background-position: center;
     background-size: contain;
     width: 250px;
@@ -210,8 +213,9 @@ p {
     top: 50%;
     transform: translateY(-50%);
     left: 10%;
-    animation: scale-logos 0.5s 4s forwards, team-left-logo-gone 1s 5s forwards;
+    animation: scale-logos 0.5s 4s forwards, team-left-logo-gone 1s 6s forwards;
     opacity: 0;
+    z-index: 1;
 }
 
 @keyframes team-left-logo-gone {
@@ -225,7 +229,7 @@ p {
 }
 
 .team-right-logo {
-    background-image: url("../public/images/right team logo.png");
+    background-image: url("images/right team logo.png");
     background-position: center;
     background-size: contain;
     width: 250px;
@@ -234,8 +238,9 @@ p {
     top: 50%;
     right: 10%;
     transform:  translateY(-50%);
-    animation: scale-logos 0.5s 4s forwards, team-right-logo-gone 1s 5s forwards;
+    animation: scale-logos 0.5s 4s forwards, team-right-logo-gone 1s 6s forwards;
     opacity: 0;
+    z-index: 1;
 }
 
 @keyframes team-right-logo-gone {
@@ -273,7 +278,125 @@ p {
     position: absolute;
     right: 2%;
     top: 2%;
+    z-index: 2;
+    background-image: url("images/button.png");
+    background-size: contain;
+    width: 30px;
+    height: 30px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.final-page {
+    background-image: url("images/final-background.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    padding: 20px;
+    opacity: 0;
+    animation: display-final-page 0.1s 5s forwards;
+}
+
+.final-page .team {
+    background-color: white;
+    width: max-content;
+    font-family: 'DINNextLTPro-Heavy', sans-serif;
+    font-size: 50px;
+    padding: 10px 50px 0 5px;
+    margin-bottom: 7px;
+    line-height: 1;
+    position: relative;
+}
+
+.date {
+    color: white;
+    position: relative;
+    font-family: 'DINNextLTPro-Heavy', sans-serif;
+    font-size: 24px;
+    margin-top: 25px;
+}
+
+.date span:first-child {
+    font-size: 16px;
+}
+
+.date span:nth-child(2) {
+    color: #d0ad68;
+}
+
+.rectangle {
+    background-image: url("images/final-rectangle.png");
+    height: 100vh;
+    width: 100vw;
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.final-img {
+    position: relative;
+    height: 35px;
+    margin-top: 20px;
+}
+
+.final-cup {
+    display: block;
+    position: absolute;
+    bottom: 60px;
+    height: 220px;
+}
+
+@keyframes display-final-page {
+      100% {
+        opacity: 1;
+    }
+}
+
+.button {
+    position: absolute;
+    left: 75%;
+    top: 10%;
+    cursor: pointer;
+    height: 70px;
     z-index: 1;
+}
+
+.button-text {
+    position: absolute;
+    left: 75%;
+    top: 22%;
+    transform: translateX(-25%);
+    color: white;
+    font-family: 'DINNextLTPro-Heavy', sans-serif;
+}
+
+.video {
+    position: absolute;
+    width: 700px;
+    height: 600px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+    z-index: 1;
+}
+
+.video-dimmer {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: black;
+    opacity: 0.5;
+    display: none;
 }
 
 
